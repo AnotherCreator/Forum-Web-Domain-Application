@@ -5,6 +5,10 @@
              version="2.2">
   <persistence-unit name="forumWebAppTestPU" transaction-type="RESOURCE_LOCAL">
     <class>org.anothercreator.webapp.domain.User</class>
+    <class>org.anothercreator.webapp.domain.Post</class>
+    <class>org.anothercreator.webapp.domain.GlobalFeed</class>
+    <class>org.anothercreator.webapp.domain.CommunityFeed</class>
+    <class>org.anothercreator.webapp.domain.Archive</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/webapp?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>

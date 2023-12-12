@@ -5,6 +5,8 @@ import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -17,6 +19,16 @@ public class User {
         this.dateCreated = LocalDate.now();
     }
 
+    // ========== RELATIONSHIPS ==========
+    /*  ONE (user) TO MANY (posts)
+        One user can make multiple posts
+        1:N Relationship Uni-directional
+        User(Owner) --> Post(Owned)
+     */
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Post> forumPostSet = new ArrayList<>();
+
+    // ========== Variables ==========
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ID;
 
@@ -32,6 +44,7 @@ public class User {
     @Column(name = "date_created", nullable = false)
     private LocalDate dateCreated;
 
+    // ========== Getter / Setter ==========
     public Long getID() {
         return ID;
     }
@@ -62,6 +75,14 @@ public class User {
 
     public void setDateCreated(LocalDate dateCreated) {
         this.dateCreated = dateCreated;
+    }
+
+    public List<Post> getPostSet() {
+        return forumPostSet;
+    }
+
+    public void setPostSet(List<Post> postSet) {
+        this.forumPostSet = postSet;
     }
 
     @Override

@@ -5,7 +5,7 @@ import javax.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
 @DataSourceDefinition(
-        name = "java:app/jdbc/itmd4515DS",
+        name = "java:app/jdbc/forumWebAppDS",
         className = "com.mysql.cj.jdbc.MysqlDataSource",
         portNumber = 3306,
         serverName = "localhost",

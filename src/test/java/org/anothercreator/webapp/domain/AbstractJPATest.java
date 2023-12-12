@@ -21,27 +21,45 @@ public class AbstractJPATest {
         emf = Persistence.createEntityManagerFactory("forumWebAppTestPU");
     }
 
+    // Create these entities before each test case
     @BeforeEach
     public void beforeEach() {
         em = emf.createEntityManager();
         tx = em.getTransaction();
 
         User createTestUser = new User("testUsername", "testemail@domain.com");
+        Post createTestPost1 = new Post("TestPost1","testDescription", createTestUser);
+        Post createTestPost2 = new Post("TestPost2","testDescription", createTestUser);
+        Post createTestPost3 = new Post("TestPost3","testDescription", createTestUser);
 
         // Begin insertion sequence
         tx.begin();
         em.persist(createTestUser);
+        em.persist(createTestPost1);
+        em.persist(createTestPost2);
+        em.persist(createTestPost3);
         tx.commit();
     }
 
+    // What to do with created entities after each test case
     @AfterEach
     public void afterEach() {
         User deleteTestUser = em.createQuery(
                 "SELECT u FROM User u WHERE u.userName = 'testUsername'", User.class).getSingleResult();
 
+        Post deleteTestPost1 = em.createQuery(
+                "SELECT p FROM Post p WHERE p.title = 'TestPost1'", Post.class).getSingleResult();
+        Post deleteTestPost2 = em.createQuery(
+                "SELECT p FROM Post p WHERE p.title = 'TestPost2'", Post.class).getSingleResult();
+        Post deleteTestPost3 = em.createQuery(
+                "SELECT p FROM Post p WHERE p.title = 'TestPost3'", Post.class).getSingleResult();
+
         // Begin deletion sequence
         tx.begin();
         em.remove(deleteTestUser);
+        em.remove(deleteTestPost1);
+        em.remove(deleteTestPost2);
+        em.remove(deleteTestPost3);
         tx.commit();
         em.close();
     }
