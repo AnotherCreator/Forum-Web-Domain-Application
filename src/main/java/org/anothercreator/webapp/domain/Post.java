@@ -13,7 +13,7 @@ public class Post {
 
     }
 
-    public Post(String title, String description ,User user) {
+    public Post(String title, String description, User user) {
         this.title = title;
         this.description = description;
         this.dateCreated = LocalDate.now();
