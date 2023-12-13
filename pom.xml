@@ -7,6 +7,8 @@
     <groupId>org.anothercreator</groupId>
     <artifactId>ForumWebApp</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <name>ForumWebApp</name>
+    <packaging>war</packaging>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
