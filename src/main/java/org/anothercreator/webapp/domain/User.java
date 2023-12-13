@@ -22,11 +22,17 @@ public class User {
     // ========== RELATIONSHIPS ==========
     /*  ONE (user) TO MANY (posts)
         One user can make multiple posts
-        1:N Relationship Uni-directional
-        User(Owner) --> Post(Owned)
-     */
+        1:N Relationship Bi-directional
+        User(Owner) --> Post(Owned) */
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Post> forumPostSet = new ArrayList<>();
+
+    /*  ONE (user) TO MANY (comments)
+            One user can make multiple comments
+            1:N Relationship Bi-directional
+            User(Owner) --> Comments(Owned) */
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Comment> commentSet = new ArrayList<>();
 
     // ========== Variables ==========
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -83,6 +89,14 @@ public class User {
 
     public void setPostSet(List<Post> postSet) {
         this.forumPostSet = postSet;
+    }
+
+    public List<Comment> getCommentSet() {
+        return commentSet;
+    }
+
+    public void setCommentSet(List<Comment> commentSet) {
+        this.commentSet = commentSet;
     }
 
     @Override
