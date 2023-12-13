@@ -1,5 +1,8 @@
-package org.anothercreator.webapp.domain;
+package org.anothercreator.webapp.domain.entities;
 
+import org.anothercreator.webapp.domain.AbstractJPATest;
+import org.anothercreator.webapp.domain.Post;
+import org.anothercreator.webapp.domain.User;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -36,7 +39,7 @@ public class PostJPATest extends AbstractJPATest {
     }
 
     @Test
-    public void readTest() {
+    public void readTest() {  // Read for values created in AbstractJPATest.@BeforeEach
         User readTestUser = em.createQuery(
                 "SELECT u FROM User u WHERE u.userName = 'testUsername'", User.class).getSingleResult();
         assertEquals("testUsername", readTestUser.getUserName());
@@ -53,7 +56,7 @@ public class PostJPATest extends AbstractJPATest {
     }
 
     @Test
-    public void updateTest() {
+    public void updateTest() {  // Read for values created in AbstractJPATest.@BeforeEach
         Post updateTestPost1 = em.createQuery(
                 "SELECT p FROM Post p WHERE p.title = 'TestPost1'", Post.class).getSingleResult();
         Post updateTestPost2 = em.createQuery(

@@ -1,5 +1,7 @@
-package org.anothercreator.webapp.domain;
+package org.anothercreator.webapp.domain.entities;
 
+import org.anothercreator.webapp.domain.AbstractJPATest;
+import org.anothercreator.webapp.domain.User;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -32,14 +34,14 @@ public class UserJPATest extends AbstractJPATest {
     }
 
     @Test
-    public void readTest() {
+    public void readTest() {  // Read for values created in AbstractJPATest.@BeforeEach
         User readTestUser = em.createQuery(
                 "SELECT u FROM User u WHERE u.userName = 'testUsername'", User.class).getSingleResult();
         assertEquals("testUsername", readTestUser.getUserName());
     }
 
     @Test
-    public void updateTest() {
+    public void updateTest() {  // Read for values created in AbstractJPATest.@BeforeEach
         User updateTestUser = em.createQuery(
                 "SELECT u FROM User u WHERE u.userName = 'testUsername'", User.class).getSingleResult();
 
