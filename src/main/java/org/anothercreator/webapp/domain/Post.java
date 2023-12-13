@@ -5,7 +5,9 @@ import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Objects;
+import java.util.List;
 
 @Entity
 public class Post {
@@ -15,34 +17,41 @@ public class Post {
 
     public Post(String title, String description, User user) {
         this.title = title;
-        this.description = description;
+        this.body = description;
         this.dateCreated = LocalDate.now();
         this.user = user;
     }
 
     // ========== RELATIONSHIPS ==========
+    /*  ONE (post) TO MANY (threads)
+        One post can host multiple comment threads inside
+        1:N Relationship Bi-Directional
+        Post(Owner) --> Comment Threads(Owned)
+     */
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
+    private List<CommentThread> commentThreadSet = new ArrayList<>();
+
     /*  MANY (posts) TO ONE (user)
         Multiple posts can belong to a singular user
-        N:1 Relationship Uni-directional
+        N:1 Relationship Bi-Directional
         Post(Owned) --> User(Owner)
      */
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
     private User user;
 
-
     // ========== Variables ==========
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ID;
 
-    @NotBlank @Size(min = 2, max = 300)
+    @NotBlank @Size(min = 2, max = 5000)
     @Column(name = "title", nullable = false)
     private String title;
 
     @NotBlank
-    @Column(name = "description", nullable = false)
-    private String description;
+    @Column(name = "body", nullable = false)
+    private String body;
 
     @FutureOrPresent
     @Column(name = "date_created", nullable = false)
@@ -66,11 +75,11 @@ public class Post {
     }
 
     public String getDescription() {
-        return description;
+        return body;
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        this.body = description;
     }
 
     public LocalDate getDateCreated() {
@@ -87,6 +96,22 @@ public class Post {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public void setBody(String body) {
+        this.body = body;
+    }
+
+    public List<CommentThread> getCommentThreadSet() {
+        return commentThreadSet;
+    }
+
+    public void setCommentThreadSet(List<CommentThread> commentThreadSet) {
+        this.commentThreadSet = commentThreadSet;
     }
 
     @Override
