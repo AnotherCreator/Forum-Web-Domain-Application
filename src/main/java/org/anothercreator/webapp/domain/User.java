@@ -28,9 +28,9 @@ public class User {
     private List<Post> forumPostSet = new ArrayList<>();
 
     /*  ONE (user) TO MANY (comments)
-            One user can make multiple comments
-            1:N Relationship Bi-directional
-            User(Owner) --> Comments(Owned) */
+        One user can make multiple comments
+        1:N Relationship Bi-directional
+        User(Owner) --> Comments(Owned) */
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Comment> commentSet = new ArrayList<>();
 
@@ -53,10 +53,6 @@ public class User {
     // ========== Getter / Setter ==========
     public Long getID() {
         return ID;
-    }
-
-    public void setID(Long ID) {
-        this.ID = ID;
     }
 
     public String getUserName() {
@@ -83,11 +79,11 @@ public class User {
         this.dateCreated = dateCreated;
     }
 
-    public List<Post> getPostSet() {
+    public List<Post> getForumPostSet() {
         return forumPostSet;
     }
 
-    public void setPostSet(List<Post> postSet) {
+    public void setForumPostSet(List<Post> postSet) {
         this.forumPostSet = postSet;
     }
 
