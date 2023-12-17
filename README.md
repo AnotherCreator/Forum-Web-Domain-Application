@@ -17,21 +17,21 @@ as "Reddit" and "Lemmy." This project is based on a previous semester long assig
 extend into recreating a fully functioning forum web app hosted locally for now as a proof-of-concept.
 
 ## What I Aim to Learn and Improve in this Project
-**Backend Development Proficiency**  
+### **Backend Development Proficiency**  
 I aim to enhance my proficiency in backend development by utilizing Java as the primary language. 
 This project provides me with an opportunity to deepen my understanding of building robust and scalable applications 
 while implementing best practices in backend architecture.  
 
-**Database Management with MySQL**  
+### **Database Management with MySQL**  
 By working with mySQL to store and manage various domain entities, 
 I aim to strengthen my skills in designing efficient and reliable database structures.  
 
-**Comprehensive Testing Strategies with JUnit**  
+### **Comprehensive Testing Strategies with JUnit**  
 The comprehensive suite of JUnit tests incorporated into this project allows me to learn and implement 
 effective testing strategies. I aim to ensure code reliability and stability by practicing thorough testing 
 methodologies, which are crucial aspects of software development.  
 
-**Security Implementation and User Authorization**  
+### **Security Implementation and User Authorization**  
 Jaxper's focus on security groups to manage user authority levels presents a valuable learning opportunity. 
 By implementing and managing security features within the forum, 
 I aim to gain insights into creating secure environments and handling user authorization effectively.  
