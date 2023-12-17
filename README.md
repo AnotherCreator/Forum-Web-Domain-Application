@@ -5,7 +5,7 @@
 
 ## Table of contents
 - [Description](#description)
-- [What I Aim to Learn and Further Enhance in this Project](#what-i-aim-to-learn-and-further-enhance-in-this-project)
+- [What I Aim to Learn and Further Improve in this Project](#what-i-aim-to-learn-and-further-improve-in-this-project)
 - [Client-Side Features](#client-side-features)
 - [Back-End Features](#back-end-features)
 - [Demo](#demo)
@@ -18,7 +18,7 @@ as "Reddit" and "Lemmy." This project is based on a previous semester long assig
 [Library Domain Application](https://github.com/AnotherCreator/Library-Domain-Application). With this, I aim to fully
 extend into recreating a fully functioning forum web app hosted locally for now as a proof-of-concept.
 
-## What I Aim to Learn and Further Enhance in this Project
+## What I Aim to Learn and Further Improve in this Project
 ### Backend Development Proficiency
 I aim to enhance my proficiency in backend development by utilizing Java as the primary language. 
 This project provides me with an opportunity to deepen my understanding of building robust and scalable applications 
