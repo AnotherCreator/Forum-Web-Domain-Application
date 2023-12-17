@@ -5,10 +5,11 @@
 
 ## Table of contents
 - [Description](#description)
-- [What I Aim to Learn in this Project](#what-i-aim-to-learn-and-further-enhance-in-this-project)
+- [What I Aim to Learn and Further Enhance in this Project](#what-i-aim-to-learn-and-further-enhance-in-this-project)
 - [Features](#features)
 - [Demo](#demo)
 - [Installation](#installation) 
+- [Usage](#usage)
 
 ## Description
 "Jaxper" is a personal project which aims to recreate and implement the essence of various popular forum platforms such
@@ -47,3 +48,5 @@ stakeholders, and users, facilitating better understanding and utilization of th
 ## Demo
 
 ## Installation
+
+## Usage
