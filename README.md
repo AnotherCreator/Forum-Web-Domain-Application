@@ -6,7 +6,8 @@
 ## Table of contents
 - [Description](#description)
 - [What I Aim to Learn and Further Enhance in this Project](#what-i-aim-to-learn-and-further-enhance-in-this-project)
-- [Features](#features)
+- [Client-Side Features](#client-side-features)
+- [Back-End Features](#back-end-features)
 - [Demo](#demo)
 - [Installation](#installation) 
 - [Usage](#usage)
@@ -26,6 +27,9 @@ while implementing best practices in backend architecture.
 ### Database Management with MySQL
 By working with mySQL to store and manage various domain entities, 
 I aim to strengthen my skills in designing efficient and reliable database structures.  
+At the same time, I get the chance of learning how to configure a new custom database developer user which only has access
+to this project's DB rather than operating on root/admin authority levels. This will help mock an actual working environment
+where the developer might only have access to DBs related to their work.
 
 ### Comprehensive Testing Strategies with JUnit 
 The comprehensive suite of JUnit tests incorporated into this project allows me to learn and implement 
@@ -43,7 +47,36 @@ comprehensive documentation. I aim to create clear and concise documentation tha
 functionalities, and usage instructions. This skill is essential for effective communication with team members, 
 stakeholders, and users, facilitating better understanding and utilization of the software.  
 
-## Features
+## Client-Side Features
+### Legend
+- [ ] Not yet added
+- [x] Added
+### Login Page
+- [ ] Fully functioning Login page 
+  - [ ] User / Password entry forms
+  - [ ] Register page
+  - [ ] Forgot password page
+### Landing Page
+- [ ] Landing page on successful login
+### User Profile
+- [ ] Customizable User Profile Page
+  - [ ] Setting Tab
+    - [ ] Change username
+    - [ ] Change password
+  - [ ] Manage Posts and comments
+    - [ ] Create Post / Comment
+    - [ ] Edit Post / Comment
+    - [ ] Delete Post / Comment 
+
+## Back-End Features
+### Legend
+- [ ] Not yet added
+- [x] Added
+### Security Groups
+- [ ] Admin
+- [ ] Community Owner
+- [ ] Community Moderator
+- [ ] User
 
 ## Demo
 
