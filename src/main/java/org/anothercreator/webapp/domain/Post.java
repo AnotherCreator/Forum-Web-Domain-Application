@@ -1,13 +1,13 @@
 package org.anothercreator.webapp.domain;
 
 import javax.persistence.*;
-import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Objects;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 public class Post {
@@ -19,6 +19,7 @@ public class Post {
         this.title = title;
         this.body = description;
         this.dateCreated = LocalDate.now();
+        this.dateEdited = LocalDate.now();
         this.user = user;
     }
 
@@ -53,9 +54,13 @@ public class Post {
     @Column(name = "body", nullable = false)
     private String body;
 
-    @FutureOrPresent
+    @PastOrPresent
     @Column(name = "date_created", nullable = false)
     private LocalDate dateCreated;
+
+    @PastOrPresent
+    @Column(name = "date_edited", nullable = false)
+    private LocalDate dateEdited;
 
     // ========== Getter / Setter ==========
     public Long getID() {

@@ -1,8 +1,8 @@
 package org.anothercreator.webapp.domain;
 
 import javax.persistence.*;
-import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -46,7 +46,7 @@ public class User {
     @Column(name = "email", nullable = false, unique = true)
     private String email;
 
-    @FutureOrPresent
+    @PastOrPresent
     @Column(name = "date_created", nullable = false)
     private LocalDate dateCreated;
 

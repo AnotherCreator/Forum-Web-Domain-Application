@@ -1,10 +1,7 @@
 package org.anothercreator.webapp.domain;
 
 import javax.persistence.*;
-import javax.validation.constraints.FutureOrPresent;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -41,9 +38,13 @@ public class Comment {
     @Column(name = "body", nullable = false)
     private String body;
 
-    @FutureOrPresent
+    @PastOrPresent
     @Column(name = "date_created", nullable = false)
     private LocalDate dateCreated;
+
+    @PastOrPresent
+    @Column(name = "date_edited", nullable = false)
+    private LocalDate dateEdited;
 
     @NotNull
     @Column(name = "num_likes", nullable = false)
