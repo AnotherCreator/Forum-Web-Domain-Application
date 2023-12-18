@@ -1,12 +1,20 @@
 package org.anothercreator.webapp.domain;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
 public class CommentThread {
     public CommentThread() {
 
+    }
+
+    public CommentThread(Post post, Comment comment, ThreadParticipants threadParticipants) {
+        this.post = post;
+        this.commentSet.add(comment);
+        this.threadParticipantsSet.add(threadParticipants);
     }
 
     // ========== RELATIONSHIPS ==========
@@ -19,10 +27,19 @@ public class CommentThread {
     @JoinColumn(name = "post_id")
     private Post post;
 
-    /*  ONE (user) TO MANY (posts)
-        One user can make multiple posts
+    /*  ONE (commentThread) TO MANY (threadParticipants)
+        One comment thread can have multiple thread participants (users)
         1:N Relationship Bi-directional
-        User(Owner) --> Post(Owned) */
+        User(commentThread) --> ThreadParticpants(Owned) */
+    @OneToMany(mappedBy = "commentThread", cascade = CascadeType.ALL)
+    private List<ThreadParticipants> threadParticipantsSet = new ArrayList<>();
+
+    /*  ONE (commentThread) TO MANY (comments)
+            One comment thread can have multiple comments
+            1:N Relationship Bi-directional
+            User(commentThread) --> Comments(Owned) */
+    @OneToMany(mappedBy = "commentThread", cascade = CascadeType.ALL)
+    private List<Comment> commentSet = new ArrayList<>();
 
     // ========== Variables ==========
     @Id
@@ -44,6 +61,14 @@ public class CommentThread {
 
     public void setPost(Post post) {
         this.post = post;
+    }
+
+    public List<ThreadParticipants> getThreadParticipantsSet() {
+        return threadParticipantsSet;
+    }
+
+    public List<Comment> getCommentSet() {
+        return commentSet;
     }
 
     @Override
