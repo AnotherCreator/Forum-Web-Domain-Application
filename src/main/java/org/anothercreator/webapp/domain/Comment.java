@@ -1,7 +1,10 @@
 package org.anothercreator.webapp.domain;
 
 import javax.persistence.*;
-import javax.validation.constraints.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.PastOrPresent;
+import javax.validation.constraints.Size;
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -29,6 +32,15 @@ public class Comment {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
     private User user;
+
+    /*  MANY (comments) TO ONE (commentThread)
+                Multiple comments can belong to a singular thread
+                N:1 Relationship Bi-Directional
+                Comments(Owned) --> CommentThread(Owner)
+             */
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "commentThread_id")
+    private CommentThread commentThread;
 
     // ========== Variables ==========
     @Id
@@ -72,10 +84,6 @@ public class Comment {
         return dateCreated;
     }
 
-    public void setDateCreated(LocalDate dateCreated) {
-        this.dateCreated = dateCreated;
-    }
-
     public LocalDate getDateEdited() {
         return dateEdited;
     }
@@ -106,6 +114,14 @@ public class Comment {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public CommentThread getCommentThread() {
+        return commentThread;
+    }
+
+    public void setCommentThread(CommentThread commentThread) {
+        this.commentThread = commentThread;
     }
 
     @Override
