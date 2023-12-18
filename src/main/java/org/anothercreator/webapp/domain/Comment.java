@@ -59,10 +59,6 @@ public class Comment {
         return ID;
     }
 
-    public void setID(Long ID) {
-        this.ID = ID;
-    }
-
     public String getBody() {
         return body;
     }

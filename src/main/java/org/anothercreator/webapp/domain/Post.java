@@ -67,10 +67,6 @@ public class Post {
         return ID;
     }
 
-    public void setID(Long ID) {
-        this.ID = ID;
-    }
-
     public String getTitle() {
         return title;
     }

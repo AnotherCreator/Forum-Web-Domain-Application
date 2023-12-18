@@ -35,7 +35,8 @@ public class User {
     private List<Comment> commentSet = new ArrayList<>();
 
     // ========== Variables ==========
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ID;
 
     @NotBlank @Size(min = 2, max = 20)
