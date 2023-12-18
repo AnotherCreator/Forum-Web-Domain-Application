@@ -17,6 +17,7 @@ public class User {
         this.userName = userName;
         this.email = email;
         this.dateCreated = LocalDate.now();
+        this.dateEdited = LocalDate.now();
     }
 
     // ========== RELATIONSHIPS ==========
@@ -51,6 +52,10 @@ public class User {
     @Column(name = "date_created", nullable = false)
     private LocalDate dateCreated;
 
+    @PastOrPresent
+    @Column(name = "date_edited", nullable = false)
+    private LocalDate dateEdited;
+
     // ========== Getter / Setter ==========
     public Long getID() {
         return ID;
@@ -78,6 +83,14 @@ public class User {
 
     public void setDateCreated(LocalDate dateCreated) {
         this.dateCreated = dateCreated;
+    }
+
+    public LocalDate getDateEdited() {
+        return dateEdited;
+    }
+
+    public void setDateEdited(LocalDate dateEdited) {
+        this.dateEdited = dateEdited;
     }
 
     public List<Post> getForumPostSet() {

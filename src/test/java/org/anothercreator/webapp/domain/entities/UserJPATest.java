@@ -48,7 +48,7 @@ public class UserJPATest extends AbstractJPATest {
         // Begin update sequence
         tx.begin();
         updateTestUser.setEmail("newEmail@domain.com");
-        updateTestUser.setDateCreated(LocalDate.of(3000, Month.JANUARY, 1));
+        updateTestUser.setDateEdited(LocalDate.now());
         tx.commit();
 
         // Find newly updated row
