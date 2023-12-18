@@ -105,10 +105,6 @@ public class User {
         return commentSet;
     }
 
-    public void setCommentSet(List<Comment> commentSet) {
-        this.commentSet = commentSet;
-    }
-
     @Override
     public boolean equals(Object that) {
         if (this == that) return true;

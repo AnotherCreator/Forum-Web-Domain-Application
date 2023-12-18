@@ -119,10 +119,6 @@ public class Post {
         return commentThreadSet;
     }
 
-    public void setCommentThreadSet(List<CommentThread> commentThreadSet) {
-        this.commentThreadSet = commentThreadSet;
-    }
-
     @Override
     public boolean equals(Object that) {
         if (this == that) return true;
