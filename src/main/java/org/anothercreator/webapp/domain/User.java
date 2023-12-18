@@ -35,6 +35,13 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Comment> commentSet = new ArrayList<>();
 
+    /*  ONE (user) TO MANY (threads)
+            One user can participate in multiple threads
+            1:N Relationship Bi-directional
+            User(Owner) --> ThreadParticpants(Owned) */
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<ThreadParticipants> threadParticipantsSet = new ArrayList<>();
+
     // ========== Variables ==========
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -81,10 +88,6 @@ public class User {
         return dateCreated;
     }
 
-    public void setDateCreated(LocalDate dateCreated) {
-        this.dateCreated = dateCreated;
-    }
-
     public LocalDate getDateEdited() {
         return dateEdited;
     }
@@ -97,12 +100,12 @@ public class User {
         return forumPostSet;
     }
 
-    public void setForumPostSet(List<Post> postSet) {
-        this.forumPostSet = postSet;
-    }
-
     public List<Comment> getCommentSet() {
         return commentSet;
+    }
+
+    public List<ThreadParticipants> getThreadParticipantsSet() {
+        return threadParticipantsSet;
     }
 
     @Override
