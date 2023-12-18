@@ -91,6 +91,14 @@ public class Post {
         this.dateCreated = dateCreated;
     }
 
+    public LocalDate getDateEdited() {
+        return dateEdited;
+    }
+
+    public void setDateEdited(LocalDate dateEdited) {
+        this.dateEdited = dateEdited;
+    }
+
     public User getUser() {
         return user;
     }

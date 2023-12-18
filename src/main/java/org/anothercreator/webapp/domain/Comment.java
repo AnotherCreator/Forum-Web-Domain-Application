@@ -15,6 +15,7 @@ public class Comment {
         this.body = body;
         this.user = user;
         this.dateCreated = LocalDate.now();
+        this.dateEdited = LocalDate.now();
         this.num_likes = 0;
         this.num_dislikes = 0;
     }
@@ -73,6 +74,14 @@ public class Comment {
 
     public void setDateCreated(LocalDate dateCreated) {
         this.dateCreated = dateCreated;
+    }
+
+    public LocalDate getDateEdited() {
+        return dateEdited;
+    }
+
+    public void setDateEdited(LocalDate dateEdited) {
+        this.dateEdited = dateEdited;
     }
 
     public Integer getNum_likes() {
