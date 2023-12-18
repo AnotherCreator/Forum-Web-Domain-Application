@@ -1,6 +1,5 @@
 # Jaxper - Web Forum Application
-[![Static Badge](https://img.shields.io/badge/Email-jreginaldo@protonmail.com-blue)](mailto:jreginaldo@protonmail.com?subject=[Github%20Jaxper]Subject)  
-![Static Badge](https://img.shields.io/badge/Discord-itakedonations-5539cc)  
+[![Static Badge](https://img.shields.io/badge/Email-jreginaldo@protonmail.com-blue)](mailto:jreginaldo@protonmail.com?subject=[Github%20Jaxper]Subject) ![Static Badge](https://img.shields.io/badge/Discord-itakedonations-5539cc)  
 [![Static Badge](https://img.shields.io/badge/Based_On-Library_Domain_Application-orange)](https://github.com/AnotherCreator/Library-Domain-Application)
 
 ## Table of contents

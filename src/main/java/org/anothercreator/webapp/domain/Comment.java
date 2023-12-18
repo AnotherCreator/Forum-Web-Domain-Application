@@ -3,6 +3,7 @@ package org.anothercreator.webapp.domain;
 import javax.persistence.*;
 import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
 import java.util.Objects;
@@ -11,6 +12,14 @@ import java.util.Objects;
 public class Comment {
     public Comment () {
 
+    }
+
+    public Comment (String body, User user) {
+        this.body = body;
+        this.user = user;
+        this.dateCreated = LocalDate.now();
+        this.num_likes = 0;
+        this.num_dislikes = 0;
     }
 
     // ========== RELATIONSHIPS ==========
@@ -28,13 +37,21 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ID;
 
-    @NotBlank @Size(min = 2, max = 2000)
+    @NotBlank @Size(min = 1, max = 2000)
     @Column(name = "body", nullable = false)
     private String body;
 
     @FutureOrPresent
     @Column(name = "date_created", nullable = false)
     private LocalDate dateCreated;
+
+    @NotNull
+    @Column(name = "num_likes", nullable = false)
+    private Integer num_likes;
+
+    @NotNull
+    @Column(name = "num_dislikes", nullable = false)
+    private Integer num_dislikes;
 
     // ========== Getter / Setter ==========
     public Long getID() {
@@ -59,6 +76,22 @@ public class Comment {
 
     public void setDateCreated(LocalDate dateCreated) {
         this.dateCreated = dateCreated;
+    }
+
+    public Integer getNum_likes() {
+        return num_likes;
+    }
+
+    public void setNum_likes(Integer num_likes) {
+        this.num_likes = num_likes;
+    }
+
+    public Integer getNum_dislikes() {
+        return num_dislikes;
+    }
+
+    public void setNum_dislikes(Integer num_dislikes) {
+        this.num_dislikes = num_dislikes;
     }
 
     public User getUser() {

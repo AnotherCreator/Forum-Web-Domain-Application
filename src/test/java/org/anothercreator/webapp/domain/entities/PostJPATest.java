@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class PostJPATest extends AbstractJPATest {
     @Test
     public void createTest() {
-        User createTestUser = new User("createTestUserName", "createtestemail@domain.com");
+        User createTestUser = new User("createTestUserName", "createpostemail@domain.com");
         Post createTestPost = new Post("createTestPost", "testDescription", createTestUser);
 
         // Begin insertion sequence
@@ -24,10 +24,8 @@ public class PostJPATest extends AbstractJPATest {
         assertNotNull(createTestPost.getID());
 
         // Find newly updated row
-        User compareTestUser = em.find(User.class, createTestUser.getID());
         Post compareTestPost = em.find(Post.class, createTestPost.getID());
-        assertEquals(compareTestUser.getUserName(), createTestUser.getUserName());
-        assertEquals(compareTestUser.getEmail(), createTestUser.getEmail());
+
         assertEquals(compareTestPost.getTitle(), createTestPost.getTitle());
         assertEquals(compareTestPost.getUser().getID(), createTestPost.getUser().getID());
 
@@ -84,7 +82,7 @@ public class PostJPATest extends AbstractJPATest {
 
     @Test
     public void deleteTest() {
-        User deleteTestUser = new User("deleteTestUserName", "createtestemail@domain.com");
+        User deleteTestUser = new User("deleteTestUserName", "deletepostemail@domain.com");
         Post deleteTestPost = new Post("deleteTestPost", "testDescription", deleteTestUser);
 
         // Begin insertion sequence

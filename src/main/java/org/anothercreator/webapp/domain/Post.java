@@ -45,11 +45,11 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ID;
 
-    @NotBlank @Size(min = 2, max = 5000)
+    @NotBlank @Size(min = 1, max = 500)
     @Column(name = "title", nullable = false)
     private String title;
 
-    @NotBlank
+    @NotBlank @Size(min = 1, max = 5000)
     @Column(name = "body", nullable = false)
     private String body;
 
