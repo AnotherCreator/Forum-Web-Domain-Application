@@ -15,7 +15,7 @@
 "Jaxper" is a personal project which aims to recreate and implement the essence of various popular forum platforms such
 as "Reddit" and "Lemmy." This project is based on a previous semester long assignment that I did which recreated a 
 [Library Domain Application](https://github.com/AnotherCreator/Library-Domain-Application). With this project, however, 
-I aim to fully flesh out a fully functioning forum web application with a ton of features available to the user, akin to
+I aim to flesh out a fully functioning forum web application with a ton of features available to the user, akin to
 popular forums today.  
 
 Although I do not plan to actually host this application for public use, videos demonstrating its features and usage will
