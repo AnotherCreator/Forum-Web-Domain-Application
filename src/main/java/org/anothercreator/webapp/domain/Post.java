@@ -46,11 +46,11 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ID;
 
-    @NotBlank @Size(min = 1, max = 500)
+    @Size(max = 500)
     @Column(name = "title", nullable = false)
     private String title;
 
-    @NotBlank @Size(min = 1, max = 5000)
+    @Size(min = 1, max = 5000)
     @Column(name = "body", nullable = false)
     private String body;
 
@@ -85,10 +85,6 @@ public class Post {
 
     public LocalDate getDateCreated() {
         return dateCreated;
-    }
-
-    public void setDateCreated(LocalDate dateCreated) {
-        this.dateCreated = dateCreated;
     }
 
     public LocalDate getDateEdited() {
